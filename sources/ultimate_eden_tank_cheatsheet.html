@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>絶もうひとつの未来 タンクカンペ</title>
+  <style>
+    :root {
+      --bg: #101216;
+      --panel: #171b22;
+      --panel-2: #202631;
+      --line: #343c4a;
+      --text: #edf1f7;
+      --muted: #aab3c2;
+      --blue: #5da8ff;
+      --cyan: #48d1cc;
+      --yellow: #ffd166;
+      --red: #ff6b6b;
+      --green: #7bd88f;
+      --purple: #c792ea;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Yu Gothic UI", "Meiryo", system-ui, sans-serif;
+      letter-spacing: 0;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(16, 18, 22, 0.96);
+    }
+
+    h1 { margin: 0; font-size: 20px; }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .wrap {
+      display: grid;
+      grid-template-columns: minmax(720px, 1.28fr) minmax(380px, 0.72fr);
+      gap: 12px;
+      padding: 12px;
+    }
+
+    section {
+      min-width: 0;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      background: var(--panel-2);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th, td {
+      padding: 7px 8px;
+      border-bottom: 1px solid #2a313d;
+      vertical-align: top;
+      font-size: 14px;
+      line-height: 1.38;
+    }
+
+    th {
+      position: sticky;
+      top: 49px;
+      z-index: 5;
+      background: #252c38;
+      color: #dce4f0;
+      font-size: 12px;
+      text-align: left;
+    }
+
+    tr.critical { background: rgba(255, 107, 107, 0.08); }
+    tr.party { background: rgba(93, 168, 255, 0.08); }
+    tr.move { background: rgba(255, 209, 102, 0.07); }
+
+    .phase {
+      margin: 12px 0 6px;
+      padding: 7px 10px;
+      background: #2b3342;
+      border-left: 5px solid var(--blue);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .badge {
+      display: inline-block;
+      min-width: 42px;
+      margin: 1px 3px 2px 0;
+      padding: 2px 7px;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .b-blue { color: #d9ecff; background: rgba(93, 168, 255, 0.18); border-color: rgba(93, 168, 255, 0.45); }
+    .b-cyan { color: #d9fffc; background: rgba(72, 209, 204, 0.16); border-color: rgba(72, 209, 204, 0.45); }
+    .b-yellow { color: #fff4cf; background: rgba(255, 209, 102, 0.16); border-color: rgba(255, 209, 102, 0.45); }
+    .b-red { color: #ffe1e1; background: rgba(255, 107, 107, 0.16); border-color: rgba(255, 107, 107, 0.45); }
+    .b-green { color: #e1ffe8; background: rgba(123, 216, 143, 0.15); border-color: rgba(123, 216, 143, 0.45); }
+    .b-purple { color: #f1ddff; background: rgba(199, 146, 234, 0.16); border-color: rgba(199, 146, 234, 0.45); }
+
+    .time { width: 64px; color: #fff; font-weight: 700; }
+    .phase-col { width: 96px; }
+    .trigger { width: 170px; }
+    .task { width: 290px; }
+    .mit { width: 190px; }
+    .note { color: var(--muted); }
+
+    a.ref {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 1px 6px;
+      border: 1px solid #3d4656;
+      border-radius: 4px;
+      background: rgba(93, 168, 255, 0.15);
+      color: #d9ecff;
+      font-size: 11px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    a.ref:hover { border-color: var(--yellow); color: #fff4cf; }
+
+    .cards { display: grid; gap: 10px; padding: 10px; }
+    .card { border: 1px solid #303847; background: #151922; padding: 10px; }
+    .card h3 { margin: 0 0 7px; font-size: 15px; }
+    .card p { margin: 4px 0; color: var(--muted); font-size: 14px; line-height: 1.45; }
+
+    .chapter-list { display: grid; gap: 5px; margin-top: 8px; }
+    .chapter-list a {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 8px;
+      padding: 5px 7px;
+      border: 1px solid #2f3848;
+      background: #11151d;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .chapter-list a:hover { border-color: var(--blue); background: #1b2330; }
+    .chapter-time { color: var(--yellow); font-weight: 700; font-variant-numeric: tabular-nums; }
+    .big { color: var(--text); font-weight: 700; }
+
+    @media (max-width: 1120px) {
+      .wrap { grid-template-columns: 1fr; }
+      th { top: 74px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>絶もうひとつの未来 タンクカンペ</h1>
+    <div class="legend">
+      <span><span class="badge b-red">受け</span> 強攻撃</span>
+      <span><span class="badge b-yellow">誘導</span> 位置/向き</span>
+      <span><span class="badge b-blue">交代</span> 挑発/スイッチ</span>
+      <span><span class="badge b-purple">投げ</span> 単体軽減</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <div class="section-title">
+        <span>タンク判断タイムライン</span>
+        <span class="note">P1-P5 / タバスコさん動画ベース</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th class="phase-col">Phase</th>
+            <th class="time">時刻</th>
+            <th class="trigger">技</th>
+            <th class="task">タンクの仕事</th>
+            <th class="mit">軽減/操作</th>
+            <th>注意</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="6"><div class="phase">P1 フェイトブレイカー</div></td></tr>
+          <tr class="critical">
+            <td>P1</td><td class="time">00:00</td><td>AA</td>
+            <td>開幕AAケア。腐るタンバフを使う</td>
+            <td><span class="badge b-red">タンバフ</span></td>
+            <td class="note">開幕からAAが続く。<a class="ref" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=62s" target="_blank" rel="noreferrer">動画</a></td>
+          </tr>
+          <tr class="move">
+            <td>P1</td><td class="time">00:15</td><td>サイクロニックブレイク</td>
+            <td>ボス本体から奥攻撃。中央へきれいに誘導</td>
+            <td><span class="badge b-yellow">中央誘導</span></td>
+            <td class="note">床の矢印先端まで誘導するとボス向きが変わりにくく近接に優しい。炎はペア頭割り、雷は全員AoE。<a class="ref" href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=14s" target="_blank" rel="noreferrer">P1解説</a></td>
+          </tr>
+          <tr class="party">
+            <td>P1</td><td class="time">00:24</td><td>連鎖爆印刻</td>
+            <td>リプを入れるなら詠唱後半。爆印デバフを使い切る</td>
+            <td><span class="badge b-blue">リプ</span></td>
+            <td class="note">無敵受けならスイッチ不要だが、早すぎるとAAで死ぬためAA分も無敵時間に入れる。バフ受けならST挑発。</td>
+          </tr>
+          <tr class="move">
+            <td>P1</td><td class="time">00:35</td><td>楽園絶技</td>
+            <td>散開はマーカー基準。雷ならロール散開、炎なら4:4頭割り</td>
+            <td><span class="badge b-yellow">散開</span></td>
+            <td class="note">赤/黄がST組、青/紫がMT組のように分ける運用例。<a class="ref" href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=87s" target="_blank" rel="noreferrer">楽園</a></td>
+          </tr>
+          <tr class="move">
+            <td>P1</td><td class="time">01:04</td><td>転輪召</td>
+            <td>炎/雷の安全円を見て飛ぶ。線はA側MT組、C側ST組で4人受け</td>
+            <td><span class="badge b-yellow">線処理</span></td>
+            <td class="note">同じ側に線が2つ出たらD3/D4調整の運用例。</td>
+          </tr>
+          <tr class="party">
+            <td>P1</td><td class="time">01:26</td><td>光焔光背</td>
+            <td>ここにリプ。ヘイト1位はボスを少し斜めに</td>
+            <td><span class="badge b-blue">リプ</span></td>
+            <td class="note">シンソイルセヴァー中にメレーが方向指定を取りやすい。Dot同時ヒットがあるので軽減甘いと危険。</td>
+          </tr>
+          <tr class="party">
+            <td>P1</td><td class="time">01:42</td><td>シンソイルセヴァー</td>
+            <td>前の光焔光背でリプしてない側が、2回目着弾前にリプ</td>
+            <td><span class="badge b-blue">リプ</span></td>
+            <td class="note">詠唱前に直線整列。線は奇数D、偶数B。線色で炎/雷判断。<a class="ref" href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=287s" target="_blank" rel="noreferrer">セヴァー</a></td>
+          </tr>
+          <tr class="critical">
+            <td>P1</td><td class="time">02:10</td><td>連鎖爆印刻 2回目</td>
+            <td>MTフルバフ受け、またはST無敵受け。方針で事前スイッチ</td>
+            <td><span class="badge b-red">フルバフ</span><span class="badge b-blue">交代</span></td>
+            <td class="note">ST無敵なら2回目光焔光背直後までにスイッチ。</td>
+          </tr>
+          <tr class="move">
+            <td>P1</td><td class="time">02:22</td><td>バーンストライク</td>
+            <td>転輪召後、殴れるようになったらボスを真南へ向ける</td>
+            <td><span class="badge b-yellow">南向き</span></td>
+            <td class="note">南整列の線が見えやすくなる。北向き維持は事故りやすい。爆印タンクは塔と反対側へ。<a class="ref" href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=344s" target="_blank" rel="noreferrer">塔</a></td>
+          </tr>
+          <tr class="critical">
+            <td>P1</td><td class="time">02:26</td><td>爆印</td>
+            <td>タンク2人に着弾。STはMTへ投げバフ</td>
+            <td><span class="badge b-purple">投げ</span></td>
+            <td class="note">MT側のバフが薄くなりやすい。距離が離れすぎない。</td>
+          </tr>
+
+          <tr><td colspan="6"><div class="phase">P2 シヴァ・ミトロン</div></td></tr>
+          <tr class="critical">
+            <td>P2</td><td class="time">00:17</td><td>クアドラスラップ</td>
+            <td>ST無敵受けならMTはスタンスを切る。フルバフ受けならリプ</td>
+            <td><span class="badge b-blue">スタンス</span><span class="badge b-red">無敵/バフ</span></td>
+            <td class="note"><a class="ref" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=237s" target="_blank" rel="noreferrer">動画</a></td>
+          </tr>
+          <tr class="critical">
+            <td>P2</td><td class="time">00:24</td><td>AA</td>
+            <td>クアドラ後もAAが来る。ヘイト1位はタンバフ</td>
+            <td><span class="badge b-red">タンバフ</span></td>
+            <td class="note">P2は強攻撃が少ないのでAAに散らす。</td>
+          </tr>
+          <tr class="party">
+            <td>P2</td><td class="time">00:53</td><td>ヘヴンリーストライク</td>
+            <td>DDのノックバック後4連頭割りへヴェール候補</td>
+            <td><span class="badge b-green">ヴェール</span></td>
+            <td class="note">マーカー設置からノックバックまでの間に入れると強い。</td>
+          </tr>
+          <tr class="move">
+            <td>P2</td><td class="time">01:35</td><td>鏡の国</td>
+            <td>白い鏡を探し、その対角へボスを引っ張る</td>
+            <td><span class="badge b-yellow">誘導</span></td>
+            <td class="note">MTの仕事量多め。1回目は猶予が少ないのでスプリント推奨。赤鏡が遠い場合は引っ張り短め。</td>
+          </tr>
+          <tr class="party">
+            <td>P2</td><td class="time">02:05</td><td>バニシュガ</td>
+            <td>詠唱後半にリプを入れると次の光の暴走まで乗る</td>
+            <td><span class="badge b-blue">リプ</span></td>
+            <td class="note">AOE対象者へ単体軽減を投げるとヒラが助かる。</td>
+          </tr>
+
+          <tr><td colspan="6"><div class="phase">P3 闇の巫女</div></td></tr>
+          <tr class="party">
+            <td>P3</td><td class="time">00:33</td><td>時間圧縮・絶</td>
+            <td>リプ。余裕があれば中ファイガ対象を確認</td>
+            <td><span class="badge b-blue">リプ</span></td>
+            <td class="note"><a class="ref" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=477s" target="_blank" rel="noreferrer">動画</a></td>
+          </tr>
+          <tr class="critical">
+            <td>P3</td><td class="time">01:21</td><td>シェルクラッシャー</td>
+            <td>時間圧縮にリプしていない側がすぐリプ。次のブラックヘイロー準備</td>
+            <td><span class="badge b-blue">リプ</span></td>
+            <td class="note">バーストで忙しいがAA/ヘイロー確認。</td>
+          </tr>
+          <tr class="critical">
+            <td>P3</td><td class="time">01:37</td><td>ブラックヘイロー</td>
+            <td>暗夜を無敵受けするならここでフルバフ受け</td>
+            <td><span class="badge b-red">フルバフ</span></td>
+            <td class="note">フルバフなら1人受け可能。STは無理に入らなくてよい。</td>
+          </tr>
+          <tr class="move">
+            <td>P3</td><td class="time">02:27</td><td>暗夜の舞踏技</td>
+            <td>エラプ3回後、ずれているエラプライン上へ誘導</td>
+            <td><span class="badge b-yellow">誘導</span></td>
+            <td class="note">MTは暗夜誘導後、ヘイローをどちらで受けるか意識。中央集合が甘いと走り出しがシビア。</td>
+          </tr>
+          <tr class="move">
+            <td>P3</td><td class="time">02:52</td><td>エンド・オブ・メモリーズ</td>
+            <td>パルサー後にボスを少し動かせる。東西なら北へ引く</td>
+            <td><span class="badge b-yellow">北寄せ</span></td>
+            <td class="note">P4開幕のボスpop位置を南側に寄せる狙い。ナイトはpホリを抱えていて誘導しやすい。</td>
+          </tr>
+
+          <tr><td colspan="6"><div class="phase">P4 2体フェーズ</div></td></tr>
+          <tr class="move">
+            <td>P4</td><td class="time">00:17</td><td>具象化</td>
+            <td>MTはシヴァ・ミトロン担当。開幕挑発</td>
+            <td><span class="badge b-blue">挑発</span></td>
+            <td class="note">P3誘導が成功していれば南スタート寄り。斜め向きで方向指定補助。ただし未来の欠片へアクラーを当てない。</td>
+          </tr>
+          <tr class="party">
+            <td>P4</td><td class="time">00:43</td><td>光と闇の竜詩</td>
+            <td>P3終わりにリプしていない側がリプ</td>
+            <td><span class="badge b-blue">リプ</span></td>
+            <td class="note"><a class="ref" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=665s" target="_blank" rel="noreferrer">動画</a></td>
+          </tr>
+          <tr class="critical">
+            <td>P4</td><td class="time">01:19</td><td>アク・モーン</td>
+            <td>MTは40%以外のバフ。STはMTへ単体軽減</td>
+            <td><span class="badge b-red">バフ</span><span class="badge b-purple">投げ</span><span class="badge b-blue">リプ</span></td>
+            <td class="note">17受け。リプも忘れず。</td>
+          </tr>
+          <tr class="move">
+            <td>P4</td><td class="time">01:44</td><td>時間結晶</td>
+            <td>設置は波を北に見てMT左上、ST右上</td>
+            <td><span class="badge b-yellow">設置</span></td>
+            <td class="note">ST側だけ難しめになりやすい。発動2秒前に40%軽減とアムレン。</td>
+          </tr>
+          <tr class="critical">
+            <td>P4</td><td class="time">02:42</td><td>アク・モーン</td>
+            <td>時間結晶後はSTが1人受け。MTはSTへ投げバフ</td>
+            <td><span class="badge b-purple">投げ</span></td>
+            <td class="note">モーンアファーを全員で受けられない時はヘイト1位が離れて1人で死ぬ判断。</td>
+          </tr>
+
+          <tr><td colspan="6"><div class="phase">P5 パンドラ・ミトロン</div></td></tr>
+          <tr class="critical">
+            <td>P5</td><td class="time">01:22</td><td>AA</td>
+            <td>MT/STどちらもヘイトを取る。AAケア</td>
+            <td><span class="badge b-red">タンバフ</span></td>
+            <td class="note">ヘイト忘れでDPSが死ぬ。<a class="ref" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=860s" target="_blank" rel="noreferrer">動画</a></td>
+          </tr>
+          <tr class="move">
+            <td>P5</td><td class="time">02:05</td><td>パラダイス・リゲインド</td>
+            <td>MTは1個目の塔の対角へ。2/3個目の塔を見て等間隔で受ける</td>
+            <td><span class="badge b-yellow">塔対角</span></td>
+            <td class="note">タンク2人が頑張るギミック。STは挑発/フルバフ忘れ注意。扇受けがかなり痛い。</td>
+          </tr>
+          <tr class="critical">
+            <td>P5</td><td class="time">02:36</td><td>星霊の剣</td>
+            <td>MTは挑発でヘイトを取り、開始前にボスをA側へ向ける</td>
+            <td><span class="badge b-blue">挑発</span><span class="badge b-yellow">向き</span></td>
+            <td class="note">北向き維持が見やすい。4発目後はMTだけ北へ抜け、後衛へボス背面を向ける。</td>
+          </tr>
+          <tr class="party">
+            <td>P5</td><td class="time">03:10</td><td>パンドラの櫃</td>
+            <td>詠唱完了ギリギリにリプ。タンクLBは「パ」の部分</td>
+            <td><span class="badge b-blue">リプ</span><span class="badge b-green">LB</span></td>
+            <td class="note">次の光塵の剣まで効果を乗せる。MTナイトLBが有力候補。</td>
+          </tr>
+          <tr class="move">
+            <td>P5</td><td class="time">04:02</td><td>パラダイス・リゲインド 2回目</td>
+            <td>1塔がCなら対角Aで1発目。スイッチ忘れず</td>
+            <td><span class="badge b-blue">スイッチ</span></td>
+            <td class="note">2回目を無敵で受けない場合、前のAAはタンバフのみでケア。</td>
+          </tr>
+          <tr class="critical">
+            <td>P5</td><td class="time">04:28</td><td>星霊の剣 2回目</td>
+            <td>MTは挑発でヘイトを取り、星霊前にボスをマーカーへ向ける</td>
+            <td><span class="badge b-blue">挑発</span><span class="badge b-yellow">向き</span></td>
+            <td class="note">Aでなくても、マーカーに向けると事故が減る。</td>
+          </tr>
+          <tr class="critical">
+            <td>P5</td><td class="time">04:45</td><td>AA</td>
+            <td>最後のAAタイム。残りバフをすべて使う</td>
+            <td><span class="badge b-red">全部</span></td>
+            <td class="note">以降はパラダイス・ロストまで削り切り。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <span>要約</span>
+        <span class="note">横目チェック</span>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>この動画の前提</h3>
+          <p>タンク単体軽減、リプ、無敵、スイッチ、誘導の解説が中心。</p>
+          <p>全体軽減や火力スキル回しは別管理。</p>
+        </div>
+        <div class="card">
+          <h3>無敵メモ</h3>
+          <p>ナイトはP4宵闇で無敵を使うと最終で戻らないため、暗夜側で使う推奨。</p>
+          <p>構成とMT/ST担当で変わるので、固定方針に合わせる。</p>
+        </div>
+        <div class="card">
+          <h3>MTが忙しい場所</h3>
+          <p>P1: 中央誘導、連鎖爆印刻、P1最後の爆印。</p>
+          <p>P2: 鏡の国のボス誘導。</p>
+          <p>P3: 暗夜の舞踏技誘導。</p>
+          <p>P5: パラダイス・リゲインド、星霊の剣の向き。</p>
+        </div>
+        <div class="card">
+          <h3>べるがさんMTナイト補足</h3>
+          <p>P1転輪召後はボスを真南へ。線が見えやすくなり、STの整列も楽。</p>
+          <p>P2鏡の国はMT仕事量多め。1回目誘導はスプリント推奨。</p>
+          <p>P3終盤でボスを北へ寄せると、P4開幕を南スタート寄りにしやすい。</p>
+          <p>P5星霊の剣は北向き維持。4発目後はMTだけ北へ抜けて背面を後衛へ向ける。</p>
+        </div>
+        <div class="card">
+          <h3>ナイトMTで嬉しい点</h3>
+          <p>ヴェール、パッセ、インタベ、自身の硬さが絶エデンと相性良い。</p>
+          <p>ボスが消える絶でもproc保持とコンボ延長で動きやすい。</p>
+          <p>火力だけでなく、誘導とPT補助で固定全体が楽になるタイプ。</p>
+        </div>
+        <div class="card">
+          <h3>STが忘れやすい場所</h3>
+          <p>P1: スイッチ、MTへの投げバフ。</p>
+          <p>P4: アクモーンでMTへ投げ、時間結晶後はST1人受け。</p>
+          <p>P5: パラダイス・リゲインドの挑発/スイッチ。</p>
+        </div>
+        <div class="card">
+          <h3>動画チャプター</h3>
+          <div class="chapter-list">
+            <a href="ultimate_eden_reference_links.html"><span class="chapter-time">LINK</span><span>参考リンク一覧を開く</span></a>
+            <a href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=0s" target="_blank" rel="noreferrer"><span class="chapter-time">00:00</span><span>しのしょー: P1 フェイトブレイカー解説</span></a>
+            <a href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=14s" target="_blank" rel="noreferrer"><span class="chapter-time">00:14</span><span>しのしょー: サイクロニックブレイク</span></a>
+            <a href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=87s" target="_blank" rel="noreferrer"><span class="chapter-time">01:27</span><span>しのしょー: 楽園絶技</span></a>
+            <a href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=287s" target="_blank" rel="noreferrer"><span class="chapter-time">04:47</span><span>しのしょー: シンソイルセヴァー</span></a>
+            <a href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=344s" target="_blank" rel="noreferrer"><span class="chapter-time">05:44</span><span>しのしょー: バーンストライク&塔</span></a>
+            <a href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=0s" target="_blank" rel="noreferrer"><span class="chapter-time">00:00</span><span>オープニング、無敵方針</span></a>
+            <a href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=60s" target="_blank" rel="noreferrer"><span class="chapter-time">01:00</span><span>P1 フェイトブレイカー</span></a>
+            <a href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=237s" target="_blank" rel="noreferrer"><span class="chapter-time">03:57</span><span>P2 シヴァ・ミトロン</span></a>
+            <a href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=442s" target="_blank" rel="noreferrer"><span class="chapter-time">07:22</span><span>P3 闇の巫女</span></a>
+            <a href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=665s" target="_blank" rel="noreferrer"><span class="chapter-time">11:05</span><span>P4 2体フェーズ</span></a>
+            <a href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=860s" target="_blank" rel="noreferrer"><span class="chapter-time">14:20</span><span>P5 パンドラ・ミトロン</span></a>
+            <a href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=903s" target="_blank" rel="noreferrer"><span class="chapter-time">15:03</span><span>パラダイス・リゲインド</span></a>
+            <a href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=976s" target="_blank" rel="noreferrer"><span class="chapter-time">16:16</span><span>星霊の剣、リプ、タンクLB</span></a>
+            <a href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=1066s" target="_blank" rel="noreferrer"><span class="chapter-time">17:46</span><span>パラダイス・リゲインド2回目</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

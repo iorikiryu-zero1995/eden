@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>絶エデン P1 リリードール式 MTナイトカンペ</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <nav class="phasenav" aria-label="フェーズ切り替え">
+    <a class="home" href="../">≡ 目次</a>
+    <a class="current" href="../p1/">P1</a>
+    <a href="../p2/">P2</a>
+    <a href="../p3/">P3</a>
+    <a href="../p4/">P4</a>
+    <a href="../p5/">P5</a>
+  </nav>
+
+  <header>
+    <h1>絶エデン P1 リリードール式 MTナイトカンペ</h1>
+    <nav class="refs" aria-label="参考リンク">
+      <a href="https://www.youtube.com/watch?v=0HDstP0aU_Y" target="_blank" rel="noreferrer">リリードールP1</a>
+      <a href="https://www.youtube.com/watch?v=s2ULM2v7e5g" target="_blank" rel="noreferrer">しのしょーP1</a>
+      <a href="../sources/ultimate_eden_tank_cheatsheet.html">全体タンクHTML</a>
+      <a href="../sources/ultimate_eden_p1_shinosho_notes.md">しのしょーメモ</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <div class="section-title">
+        <span>P1 タイムライン</span>
+        <span class="note">MTナイト / リリド式確認用</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th class="time">時刻</th>
+            <th class="trigger">技</th>
+            <th class="task">MTナイトの仕事</th>
+            <th class="mit">軽減/操作</th>
+            <th>注意</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="mitigation">
+            <td class="time">-00:10</td>
+            <td>戦闘開始前</td>
+            <td>全体軽減を仕込む</td>
+            <td><span class="badge b-blue">ヴェール</span></td>
+            <td class="note">開幕全体とAA前の仕込み。カウント10秒で使用。</td>
+          </tr>
+          <tr class="critical">
+            <td class="time">00:00</td>
+            <td>開幕AA<span class="srcs"><a class="src-t" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=62s" target="_blank" rel="noreferrer" title="タバスコ: 開幕AAケア">T</a></span></td>
+            <td>ボスを中央へ。腐るタンバフをAAケアに使う</td>
+            <td><span class="badge b-red">タンバフ</span></td>
+            <td class="note">開幕からAAあり。次の誘導で中央を崩さない。</td>
+          </tr>
+          <tr class="move clickable-row" data-toggle="cyclonic-detail" tabindex="0" aria-expanded="false">
+            <td class="time">00:15</td>
+            <td>サイクロニックブレイク<span class="toggle-hint">画像</span><span class="srcs"><a class="src-l" href="https://www.youtube.com/watch?v=0HDstP0aU_Y&t=50s" target="_blank" rel="noreferrer" title="リリードール: サイクロニックブレイク">L</a><a class="src-s" href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=14s" target="_blank" rel="noreferrer" title="しのしょー: サイクロニックブレイク">S</a><a class="src-t" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=69s" target="_blank" rel="noreferrer" title="タバスコ: 中央誘導">T</a></span></td>
+            <td>床矢印の先端まで中央誘導。炎: ペア頭割り。雷: 全員AoE</td>
+            <td><span class="badge b-yellow">中央誘導</span></td>
+            <td class="note">先端まで誘導するとボス向きが変わりにくく近接に優しい。ボスがフィールド中心からズレていたら、ボス基準で受ける。</td>
+          </tr>
+          <tr id="cyclonic-detail" class="detail-row">
+            <td colspan="5">
+              <div class="detail-panel">
+                <figure class="figure">
+                  <figcaption class="figure-title lightning">雷/青: 散開</figcaption>
+                  <img src="../assets/img/p1/ultimate_eden_p1_lilidoll_cyclonic_spread01.jpg" alt="サイクロニックブレイク 雷青色 散開図">
+                  <p class="figure-note lightning">ボスが雷・青色なら散開。全員が時計回りにずれる。遠隔とSTは離れる。</p>
+                </figure>
+                <figure class="figure">
+                  <figcaption class="figure-title fire">炎/赤: ペア頭割り</figcaption>
+                  <img src="../assets/img/p1/ultimate_eden_p1_lilidoll_cyclonic_spread02.jpg" alt="サイクロニックブレイク 炎赤色 ペア頭割り図">
+                  <p class="figure-note fire">ボスが炎・赤色ならペア頭割り。タンク/ヒラは反時計、DPSは時計回りにずれる。</p>
+                </figure>
+              </div>
+            </td>
+          </tr>
+          <tr class="party clickable-row" data-toggle="bakuhatsu-detail" tabindex="0" aria-expanded="false">
+            <td class="time">00:24</td>
+            <td>連鎖爆印刻<span class="toggle-hint">注記</span><span class="srcs"><a class="src-l" href="https://www.youtube.com/watch?v=0HDstP0aU_Y&t=119s" target="_blank" rel="noreferrer" title="リリードール: 爆印タンク強攻撃">L</a><a class="src-s" href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=63s" target="_blank" rel="noreferrer" title="しのしょー: 連鎖爆印刻">S</a><a class="src-t" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=84s" target="_blank" rel="noreferrer" title="タバスコ: リプ/スイッチ">T</a></span></td>
+            <td>リプを乗せるなら詠唱後半。バフ受けならST挑発でスイッチ</td>
+            <td><span class="badge b-blue">リプ</span><span class="badge b-blue">交代</span></td>
+            <td class="note">無敵受けならスイッチ不要。ただし早すぎるとAAで死ぬため、AA分も無敵時間に入れる。</td>
+          </tr>
+          <tr id="bakuhatsu-detail" class="detail-row">
+            <td colspan="5">
+              <div class="detail-panel">
+                <div class="figure">
+                  <p class="figure-title">リリードール動画内注記</p>
+                  <p class="figure-note">野良では2回目爆印刻をST無敵、P2開幕をMT無敵にすることが多く、1回目爆印刻はバフ受けスイッチが多い。</p>
+                  <p class="figure-note">バフ受けは詠唱中に挑発。MTは詠唱真ん中くらいからランパートを炊くと、後の爆発にも乗る。</p>
+                  <p class="figure-note">爆発より1回目の攻撃が痛いため、リプ + フルバフ推奨。センチネル/ブルワーク等はランパより先に炊く運用例。</p>
+                  <p class="figure-note">ナイトMTはP3誘導で無敵を使うことが多いため、リキャスト都合で2回目爆印刻をMTナイト無敵、P2をST無敵にする処理例あり。P3誘導はバフ受けも可能なのでPTで相談。</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr class="move">
+            <td class="time">00:35</td>
+            <td>楽園絶技 開始<span class="srcs"><a class="src-l" href="https://www.youtube.com/watch?v=0HDstP0aU_Y&t=149s" target="_blank" rel="noreferrer" title="リリードール: 楽園絶技">L</a><a class="src-s" href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=87s" target="_blank" rel="noreferrer" title="しのしょー: 楽園絶技">S</a></span></td>
+            <td>外周分身を見て安置判断開始。爆印前にSTがMT隣へ来る形を確認</td>
+            <td><span class="badge b-yellow">安置</span></td>
+            <td class="note">リリド式はSTとD4位置交代で、STがMT隣に来る。まず爆印を先に処理。</td>
+          </tr>
+          <tr class="critical clickable-row" data-toggle="rakuen-bakuhatsu-detail" tabindex="0" aria-expanded="false">
+            <td class="time">00:41</td>
+            <td>爆印発動<span class="toggle-hint">画像</span><span class="srcs"><a class="src-l" href="https://www.youtube.com/watch?v=0HDstP0aU_Y&t=175s" target="_blank" rel="noreferrer" title="リリードール: STがMT隣へ">L</a><a class="src-t" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=107s" target="_blank" rel="noreferrer" title="タバスコ: 爆印デバフ処理">T</a></span></td>
+            <td>STと近づいてタンク2人で受ける。PTを巻き込まない</td>
+            <td><span class="badge b-red">受け</span></td>
+            <td class="note">スプレッドシートでは00:41。範囲が大きい。D/H2はタンク逆側寄りだと安全。</td>
+          </tr>
+          <tr id="rakuen-bakuhatsu-detail" class="detail-row">
+            <td colspan="5">
+              <div class="detail-panel">
+                <figure class="figure">
+                  <figcaption class="figure-title">楽園絶技中の爆印位置</figcaption>
+                  <img src="../assets/img/p1/ultimate_eden_p1_lilidoll_rakuen_spread01.jpg" alt="楽園絶技中の爆印位置図">
+                  <p class="figure-note">直前の連鎖爆印刻の爆発をタンク2人で受けるため、MT/STが近くにいる。</p>
+                </figure>
+              </div>
+            </td>
+          </tr>
+          <tr class="move clickable-row" data-toggle="rakuen-detail" tabindex="0" aria-expanded="false">
+            <td class="time">00:45</td>
+            <td>楽園絶技 頭割り/散開<span class="toggle-hint">画像</span><span class="srcs"><a class="src-l" href="https://www.youtube.com/watch?v=0HDstP0aU_Y&t=149s" target="_blank" rel="noreferrer" title="リリードール: 楽園絶技">L</a><a class="src-s" href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=87s" target="_blank" rel="noreferrer" title="しのしょー: 楽園絶技">S</a></span></td>
+            <td>爆印後、安置で炎なら4:4頭割り、雷なら散開</td>
+            <td><span class="badge b-yellow">安置</span></td>
+            <td class="note">担当は西側がMT組、東側がST組の意識で見る。</td>
+          </tr>
+          <tr id="rakuen-detail" class="detail-row">
+            <td colspan="5">
+              <div class="detail-panel">
+                <figure class="figure">
+                  <figcaption class="figure-title fire">B,D安置 炎/赤: 4:4頭割り</figcaption>
+                  <img src="../assets/img/p1/ultimate_eden_p1_lilidoll_rakuen_spread02.jpg" alt="楽園絶技 B,D安置 炎赤色 4:4頭割り散開図">
+                  <p class="figure-note">担当はMT組: A〜3 / ST組: 1〜C。図の安置は一例。</p>
+                </figure>
+                <figure class="figure">
+                  <figcaption class="figure-title lightning">2,4安置 雷/青: 散開</figcaption>
+                  <img src="../assets/img/p1/ultimate_eden_p1_lilidoll_rakuen_spread03.jpg" alt="楽園絶技 2,4安置 雷青色 散開図">
+                  <p class="figure-note lightning">赤文字注記はB,D安置と同じ。図だとSTが少し内側になっているが、しっかり外周へ散開する。</p>
+                </figure>
+                <div class="figure">
+                  <p class="figure-title">リリードール動画内注記</p>
+                  <p class="figure-note">担当マーカーに違和感はあるが、マーカー配置は今さら変えられない。Aを含めた西側 / Cを含めた東側で考える。</p>
+                  <p class="figure-note">内側に動く時、ジャンプすると紛らわしいため歩いて動く。</p>
+                  <p class="figure-note">安置が分かったくらいで陣、ケーラを使うと、もう1個後の4:4頭割りでちょうどリキャストが返る。</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr class="move clickable-row" data-toggle="tenrin-detail" tabindex="0" aria-expanded="false">
+            <td class="time">01:04</td>
+            <td>転輪召<span class="toggle-hint">画像</span><span class="srcs"><a class="src-l" href="https://www.youtube.com/watch?v=0HDstP0aU_Y&t=257s" target="_blank" rel="noreferrer" title="リリードール: 転輪召/線調整">L</a><a class="src-s" href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=240s" target="_blank" rel="noreferrer" title="しのしょー: 転輪召">S</a></span></td>
+            <td>A付近分身の逆色が安置。線偏り時は調整役を確認</td>
+            <td><span class="badge b-yellow">線処理</span></td>
+            <td class="note">リリド式はMT/D1調整の可能性。しのしょー式はD3/D4調整。</td>
+          </tr>
+          <tr id="tenrin-detail" class="detail-row">
+            <td colspan="5">
+              <div class="detail-panel">
+                <figure class="figure">
+                  <figcaption class="figure-title lightning">転輪召 雷/横</figcaption>
+                  <img src="../assets/img/p1/ultimate_eden_p1_lilidoll_tenrin_spread01.jpg" alt="転輪召 安全円確認図1">
+                  <p class="figure-note lightning">A付近分身の逆色が安置。雷は横に広がる直線範囲。</p>
+                </figure>
+                <figure class="figure">
+                  <figcaption class="figure-title fire">転輪召 炎/縦ノックバック</figcaption>
+                  <img src="../assets/img/p1/ultimate_eden_p1_lilidoll_tenrin_spread02.jpg" alt="転輪召 安全円確認図2">
+                  <p class="figure-note fire">A付近分身の逆色が安置。炎は縦直線後ノックバック。</p>
+                </figure>
+                <figure class="figure">
+                  <figcaption class="figure-title">転輪召 線処理</figcaption>
+                  <img src="../assets/img/p1/ultimate_eden_p1_lilidoll_tenrin_line01.jpg" alt="転輪召 線処理図">
+                  <p class="figure-note">頭割り: THは北、DPSは南。頭割り調整: MT/D1。</p>
+                  <p class="figure-note">優先順位: 北 H1 H2 MT ST D1 D2 D3 D4 南。</p>
+                </figure>
+                <figure class="figure">
+                  <figcaption class="figure-title">転輪召 ノックバック後4:4</figcaption>
+                  <img src="../assets/img/p1/ultimate_eden_p1_lilidoll_tenrin_line02.jpg" alt="転輪召 ノックバック後4:4頭割り図">
+                  <p class="figure-note">ノックバック後は、ボスが戻ってきたらすぐ殴れるように中央へ寄って4:4頭割り。</p>
+                </figure>
+              </div>
+            </td>
+          </tr>
+          <tr class="party">
+            <td class="time">01:26</td>
+            <td>光焔光背<span class="srcs"><a class="src-l" href="https://www.youtube.com/watch?v=0HDstP0aU_Y&t=421s" target="_blank" rel="noreferrer" title="リリードール: 光焔光背">L</a><a class="src-s" href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=276s" target="_blank" rel="noreferrer" title="しのしょー: 光焔光背">S</a><a class="src-t" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=157s" target="_blank" rel="noreferrer" title="タバスコ: 光焔光背リプ">T</a></span></td>
+            <td>リプ。ヘイト1位はボスを少し斜めにして方向指定補助</td>
+            <td><span class="badge b-blue">リプ</span></td>
+            <td class="note">DoT付きで痛い。シンソイル整列中にメレーが殴りやすい向きへ。</td>
+          </tr>
+          <tr class="move clickable-row" data-toggle="sever-detail" tabindex="0" aria-expanded="false">
+            <td class="time">01:42</td>
+            <td>シンソイルセヴァー<span class="toggle-hint">画像</span><span class="srcs"><a class="src-l" href="https://www.youtube.com/watch?v=0HDstP0aU_Y&t=435s" target="_blank" rel="noreferrer" title="リリードール: シンソイルセヴァー">L</a><a class="src-s" href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=287s" target="_blank" rel="noreferrer" title="しのしょー: シンソイルセヴァー">S</a><a class="src-t" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=181s" target="_blank" rel="noreferrer" title="タバスコ: セヴァー後リプ">T</a></span></td>
+            <td>詠唱前に南で直線整列。奇数D、偶数B。線色で炎/雷判断</td>
+            <td><span class="badge b-yellow">整列</span></td>
+            <td class="note">炎: 頭割り。雷: 近い3人AoE。無職は優先度でBDへ4:4。</td>
+          </tr>
+          <tr id="sever-detail" class="detail-row">
+            <td colspan="5">
+              <div class="detail-panel">
+                <figure class="figure">
+                  <figcaption class="figure-title">シンソイルセヴァー 整列優先度</figcaption>
+                  <img src="../assets/img/p1/ultimate_eden_p1_lilidoll_sever_spread01.jpg" alt="シンソイルセヴァー 整列優先度図">
+                  <p class="figure-note">優先順位: フェーズ1は全部北西からヒラタンクDPS。</p>
+                  <p class="figure-note">並び順: 北/西 H1 H2 MT ST D1 D2 D3 D4 南/東。</p>
+                </figure>
+                <figure class="figure">
+                  <figcaption class="figure-title">シンソイルセヴァー 処理例 1</figcaption>
+                  <img src="../assets/img/p1/ultimate_eden_p1_lilidoll_sever_spread02.jpg" alt="シンソイルセヴァー 処理例1">
+                  <p class="figure-note">線付き/無職が優先度で左右に分かれる。</p>
+                </figure>
+                <figure class="figure">
+                  <figcaption class="figure-title">シンソイルセヴァー 処理例 2</figcaption>
+                  <img src="../assets/img/p1/ultimate_eden_p1_lilidoll_sever_spread03.jpg" alt="シンソイルセヴァー 処理例2">
+                  <p class="figure-note fire">炎/頭割り寄りの配置確認。</p>
+                </figure>
+                <figure class="figure">
+                  <figcaption class="figure-title">シンソイルセヴァー 処理例 3</figcaption>
+                  <img src="../assets/img/p1/ultimate_eden_p1_lilidoll_sever_spread04.jpg" alt="シンソイルセヴァー 処理例3">
+                  <p class="figure-note lightning">雷/散開寄りの配置確認。</p>
+                </figure>
+              </div>
+            </td>
+          </tr>
+          <tr class="party">
+            <td class="time">02:00</td>
+            <td>光焔光背 2回目<span class="srcs"><a class="src-l" href="https://www.youtube.com/watch?v=0HDstP0aU_Y&t=605s" target="_blank" rel="noreferrer" title="リリードール: セヴァー後光焔光背">L</a><a class="src-t" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=181s" target="_blank" rel="noreferrer" title="タバスコ: 2回目着弾前リプ">T</a></span></td>
+            <td>前の光焔光背でリプしていない側が、セヴァー2回目着弾前にリプ</td>
+            <td><span class="badge b-blue">リプ</span></td>
+            <td class="note">次の光焔光背まで乗せる意識。</td>
+          </tr>
+          <tr class="critical">
+            <td class="time">02:10</td>
+            <td>連鎖爆印刻 2回目<span class="srcs"><a class="src-l" href="https://www.youtube.com/watch?v=0HDstP0aU_Y&t=615s" target="_blank" rel="noreferrer" title="リリードール: P1最後のギミック前">L</a><a class="src-s" href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=344s" target="_blank" rel="noreferrer" title="しのしょー: バーンストライク&塔">S</a><a class="src-t" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=198s" target="_blank" rel="noreferrer" title="タバスコ: 2回目連鎖爆印刻">T</a></span></td>
+            <td>MTフルバフ受け、またはST無敵受け。固定方針でスイッチ</td>
+            <td><span class="badge b-red">フルバフ</span><span class="badge b-blue">交代</span></td>
+            <td class="note">ST無敵なら2回目光焔光背直後までにスイッチ。</td>
+          </tr>
+          <tr class="move clickable-row" data-toggle="tower-detail" tabindex="0" aria-expanded="false">
+            <td class="time">02:22</td>
+            <td>バーンストライク&塔<span class="toggle-hint">画像</span><span class="srcs"><a class="src-l" href="https://www.youtube.com/watch?v=0HDstP0aU_Y&t=626s" target="_blank" rel="noreferrer" title="リリードール: バーンストライク/塔">L</a><a class="src-s" href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=344s" target="_blank" rel="noreferrer" title="しのしょー: バーンストライク&塔">S</a><a class="src-t" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=213s" target="_blank" rel="noreferrer" title="タバスコ: 最後の爆印/投げ軽減">T</a></span></td>
+            <td>タンクは塔と反対側へ。MT/STの北南をマクロで確認</td>
+            <td><span class="badge b-yellow">位置</span></td>
+            <td class="note">塔はH/H2/D4固定寄り、D1/D2/D3調整のリリド式を確認。</td>
+          </tr>
+          <tr id="tower-detail" class="detail-row">
+            <td colspan="5">
+              <div class="detail-panel">
+                <figure class="figure">
+                  <figcaption class="figure-title">塔踏み + 爆印刻の爆発</figcaption>
+                  <img src="../assets/img/p1/ultimate_eden_p1_lilidoll_tower_spread01.jpg" alt="バーンストライク 塔踏みと爆印刻の爆発図">
+                  <p class="figure-note">タンクは塔がない側で爆印を処理。図ではMT/STが西側、塔処理組が東側。</p>
+                </figure>
+                <figure class="figure">
+                  <figcaption class="figure-title">塔人数例</figcaption>
+                  <img src="../assets/img/p1/ultimate_eden_p1_lilidoll_tower_spread02.jpg" alt="バーンストライク 塔人数例図">
+                  <p class="figure-note">塔人数例: 北から2人用、1人用、3人用。</p>
+                </figure>
+              </div>
+            </td>
+          </tr>
+          <tr class="critical">
+            <td class="time">02:26</td>
+            <td>爆印<span class="srcs"><a class="src-l" href="https://www.youtube.com/watch?v=0HDstP0aU_Y&t=690s" target="_blank" rel="noreferrer" title="リリードール: タンク爆印位置">L</a><a class="src-t" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=213s" target="_blank" rel="noreferrer" title="タバスコ: STからMTへ投げ軽減">T</a></span></td>
+            <td>STから投げ軽減をもらう。タンク同士の距離を離しすぎない</td>
+            <td><span class="badge b-purple">投げ</span></td>
+            <td class="note">MT側バフが薄い。安定重視なら飛びつかない。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <span>横目チェック</span>
+        <span class="note">MT/ST確認</span>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h2>リリド式で必ず確認</h2>
+          <ul>
+            <li><span class="big">楽園:</span> ST/D4位置交代でSTがMT隣に来る。</li>
+            <li><span class="big">転輪:</span> 線偏り時の調整役。リリドはMT/D1、しのしょーはD3/D4。</li>
+            <li><span class="big">塔:</span> H/H2/D4固定、D1/D2/D3調整の優先度。</li>
+            <li><span class="big">爆印:</span> P1最後のMT/ST北南。</li>
+            <li><span class="big">誘導:</span> サイクロニックは矢印の先端まで誘導。</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>MTナイト軽減</h2>
+          <ul>
+            <li>戦闘開始10秒前にヴェール。</li>
+            <li>開幕AAに腐るタンバフ。</li>
+            <li>連鎖爆印刻1回目の無敵受けは、AA分も無敵時間へ入れる。</li>
+            <li>連鎖爆印刻2回目はMTフルバフ受け候補。</li>
+            <li>P1最後の爆印はSTから投げ軽減をもらう。</li>
+            <li>光焔光背/セヴァー後のリプ分担をあるるさんと確認。</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>コール候補</h2>
+          <ul>
+            <li>「炎/雷」</li>
+            <li>「線偏り、MT調整」</li>
+            <li>「リプ 次お願い」</li>
+            <li>「塔なし側、北MT/南ST」</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>参考リンク</h2>
+          <p><a class="link" href="https://www.youtube.com/watch?v=0HDstP0aU_Y" target="_blank" rel="noreferrer">リリードール提供 野良式P1</a></p>
+          <p><a class="link" href="https://www.youtube.com/watch?v=s2ULM2v7e5g" target="_blank" rel="noreferrer">しのしょーさん P1解説</a></p>
+          <p><a class="link" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=60s" target="_blank" rel="noreferrer">タバスコさん P1タンク</a></p>
+          <p><a class="link" href="../sources/ultimate_eden_p1_shinosho_notes.md">しのしょー要約メモ</a></p>
+          <p><a class="link" href="../sources/ultimate_eden_p1_lilidoll_notes.md">リリードールP1メモ</a></p>
+          <p><a class="link" href="../sources/ultimate_eden_tank_tabasco_notes.md">タバスコ要約メモ</a></p>
+        </article>
+
+        <article class="card">
+          <h2>まだ固定で確認</h2>
+          <ul>
+            <li>連鎖爆印刻2回目をMTフルバフかST無敵か。</li>
+            <li>転輪召の線偏り調整をMT/D1で確定するか。</li>
+            <li>P1最後の塔優先度とタンク爆印位置。</li>
+            <li>リプ分担とST投げ軽減のタイミング。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div id="ytdock" class="ytdock" hidden>
+    <div class="ytdock-bar">
+      <span id="ytdock-label">参考動画</span>
+      <span class="ytdock-btns">
+        <button id="ytdock-min" type="button" aria-label="最小化" title="最小化">_</button>
+        <button id="ytdock-close" type="button" aria-label="閉じる" title="閉じる">×</button>
+      </span>
+    </div>
+    <div id="ytplayer"></div>
+  </div>
+
+  <script src="../assets/js/player.js"></script>
+</body>
+</html>

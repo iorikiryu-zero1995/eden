@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>絶エデン 参考リンク一覧</title>
+  <style>
+    :root {
+      --bg: #101216;
+      --panel: #171b22;
+      --panel-2: #202631;
+      --line: #343c4a;
+      --text: #edf1f7;
+      --muted: #aab3c2;
+      --blue: #5da8ff;
+      --yellow: #ffd166;
+      --green: #7bd88f;
+      --purple: #c792ea;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Yu Gothic UI", "Meiryo", system-ui, sans-serif;
+      letter-spacing: 0;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(16, 18, 22, 0.96);
+    }
+
+    h1 {
+      margin: 0 0 4px;
+      font-size: 22px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(360px, 1fr));
+      gap: 12px;
+      padding: 12px;
+    }
+
+    section {
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    h2 {
+      margin: 0;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      background: var(--panel-2);
+      font-size: 16px;
+    }
+
+    .links {
+      display: grid;
+      gap: 7px;
+      padding: 10px;
+    }
+
+    a.item {
+      display: grid;
+      grid-template-columns: 68px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 8px;
+      border: 1px solid #303847;
+      background: #151922;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    a.item:hover {
+      border-color: var(--blue);
+      background: #1b2330;
+    }
+
+    .time {
+      color: var(--yellow);
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .title {
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .desc {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 0 4px 4px 0;
+      padding: 2px 7px;
+      border-radius: 4px;
+      border: 1px solid #3d4656;
+      background: #11151d;
+      color: #dce4f0;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .local {
+      color: var(--green);
+    }
+
+    @media (max-width: 880px) {
+      main { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>絶エデン 参考リンク一覧</h1>
+    <div class="lead">タンクカンペ作成用。動画はクリックで該当時間から開く。</div>
+  </header>
+
+  <main>
+    <section>
+      <h2>ローカルカンペ</h2>
+      <div class="links">
+        <a class="item" href="ultimate_eden_tank_cheatsheet.html">
+          <span class="time local">HTML</span>
+          <span>
+            <span class="title">絶エデン タンクカンペ</span>
+            <span class="desc">タンク判断タイムライン。MT/ST共通の実戦用。</span>
+          </span>
+        </a>
+        <a class="item" href="ultimate_eden_tank_notes.md">
+          <span class="time local">MD</span>
+          <span>
+            <span class="title">絶エデン タンク復習ノート</span>
+            <span class="desc">Obsidianで追記して育てるMarkdown版。</span>
+          </span>
+        </a>
+        <a class="item" href="../../ultima/crib_sheets/ultimate_mt_cheatsheet.html">
+          <span class="time local">HTML</span>
+          <span>
+            <span class="title">絶アルテマ MTカンペ</span>
+            <span class="desc">前に作った絶テマMT版。形式比較用。</span>
+          </span>
+        </a>
+        <a class="item" href="../../ultima/crib_sheets/ultimate_st_pld_cheatsheet_sources.html">
+          <span class="time local">HTML</span>
+          <span>
+            <span class="title">絶アルテマ STナイト 参照リンク版</span>
+            <span class="desc">動画リンク付きカンペの完成形サンプル。</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>タバスコさん タンク解説</h2>
+      <div class="links">
+        <a class="item" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=0s" target="_blank" rel="noreferrer"><span class="time">00:00</span><span><span class="title">オープニング、無敵方針</span><span class="desc">タンク無敵の考え方。ナイトはP4宵闇で使うと最終に戻らない話。</span></span></a>
+        <a class="item" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=60s" target="_blank" rel="noreferrer"><span class="time">01:00</span><span><span class="title">P1 フェイトブレイカー</span><span class="desc">中央誘導、連鎖爆印刻、リプ、スイッチ。</span></span></a>
+        <a class="item" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=237s" target="_blank" rel="noreferrer"><span class="time">03:57</span><span><span class="title">P2 シヴァ・ミトロン</span><span class="desc">クアドラ、鏡の国、AAケア。</span></span></a>
+        <a class="item" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=442s" target="_blank" rel="noreferrer"><span class="time">07:22</span><span><span class="title">P3 闇の巫女</span><span class="desc">時間圧縮、シェルクラッシャー、暗夜誘導。</span></span></a>
+        <a class="item" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=665s" target="_blank" rel="noreferrer"><span class="time">11:05</span><span><span class="title">P4 2体フェーズ</span><span class="desc">2体開幕、アクモーン、時間結晶。</span></span></a>
+        <a class="item" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=860s" target="_blank" rel="noreferrer"><span class="time">14:20</span><span><span class="title">P5 パンドラ・ミトロン</span><span class="desc">ヘイト、パラダイスリゲインド、星霊の剣。</span></span></a>
+      </div>
+    </section>
+
+    <section>
+      <h2>しのしょーさん P1解説</h2>
+      <div class="links">
+        <a class="item" href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=0s" target="_blank" rel="noreferrer"><span class="time">00:00</span><span><span class="title">P1 フェイトブレイカー解説</span><span class="desc">P1全体のギミック手順。</span></span></a>
+        <a class="item" href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=14s" target="_blank" rel="noreferrer"><span class="time">00:14</span><span><span class="title">サイクロニックブレイク</span><span class="desc">炎/雷パターン、散開と頭割り。</span></span></a>
+        <a class="item" href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=87s" target="_blank" rel="noreferrer"><span class="time">01:27</span><span><span class="title">楽園絶技</span><span class="desc">内外判断、ロール散開、4:4処理。</span></span></a>
+        <a class="item" href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=287s" target="_blank" rel="noreferrer"><span class="time">04:47</span><span><span class="title">シンソイルセヴァー</span><span class="desc">直線整列、奇数D/偶数B、線色判断。</span></span></a>
+        <a class="item" href="https://www.youtube.com/watch?v=s2ULM2v7e5g&t=344s" target="_blank" rel="noreferrer"><span class="time">05:44</span><span><span class="title">バーンストライク&塔</span><span class="desc">爆印タンクは塔と反対側へ。</span></span></a>
+      </div>
+    </section>
+
+    <section>
+      <h2>note記事</h2>
+      <div class="links">
+        <a class="item" href="https://note.com/plz_intervention/n/ne84adb83d6ef" target="_blank" rel="noreferrer">
+          <span class="time">note</span>
+          <span>
+            <span class="title">べるがさん: 絶エデン MTナイト 備忘録</span>
+            <span class="desc">MTナイト視点。誘導、ナイトの強み、P2鏡、P5星霊の剣など。</span>
+          </span>
+        </a>
+        <a class="item" href="https://jp.finalfantasyxiv.com/lodestone/character/47310454/blog/5512267/" target="_blank" rel="noreferrer">
+          <span class="time">日記</span>
+          <span>
+            <span class="title">ST暗黒視点 感想と備忘録</span>
+            <span class="desc">ST暗黒視点。無敵回し、時間結晶、パラダイスリゲインド、実戦反省。</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>用途別ショートカット</h2>
+      <div class="links">
+        <a class="item" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=903s" target="_blank" rel="noreferrer"><span class="time">15:03</span><span><span class="title">P5 パラダイス・リゲインド</span><span class="desc">タンク2人の塔、スイッチ、強攻撃確認。</span></span></a>
+        <a class="item" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=976s" target="_blank" rel="noreferrer"><span class="time">16:16</span><span><span class="title">星霊の剣、リプ、タンクLB</span><span class="desc">最終の向き、リプ、LBの確認。</span></span></a>
+        <a class="item" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=1066s" target="_blank" rel="noreferrer"><span class="time">17:46</span><span><span class="title">パラダイス・リゲインド2回目</span><span class="desc">スイッチ忘れ注意ポイント。</span></span></a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>絶エデン P2 MTナイトカンペ</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <nav class="phasenav" aria-label="フェーズ切り替え">
+    <a class="home" href="../">≡ 目次</a>
+    <a href="../p1/">P1</a>
+    <a class="current" href="../p2/">P2</a>
+    <a href="../p3/">P3</a>
+    <a href="../p4/">P4</a>
+    <a href="../p5/">P5</a>
+  </nav>
+
+  <header>
+    <h1>絶エデン P2 MTナイトカンペ</h1>
+    <nav class="refs" aria-label="参考リンク">
+      <a href="https://jp.finalfantasyxiv.com/lodestone/character/34120564/blog/5500375/" target="_blank" rel="noreferrer">リリードールP2マクロ</a>
+      <a href="https://kanatan.info/archives/38569803.html" target="_blank" rel="noreferrer">イディル式記事</a>
+      <a href="https://www.youtube.com/watch?v=u7yy2BMyaIU" target="_blank" rel="noreferrer">しのしょーP2</a>
+      <a href="../sources/ultimate_eden_tank_cheatsheet.html">全体タンクHTML</a>
+      <a href="../sources/ultimate_eden_p2_shinosho_transcript.txt">しのしょー文字起こし</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <div class="section-title">
+        <span>P2 タイムライン</span>
+        <span class="note">MTナイト / タンク軽減確認用</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th class="time">時刻</th>
+            <th class="trigger">技</th>
+            <th class="task">MTナイトの仕事</th>
+            <th class="mit">軽減/操作</th>
+            <th>注意</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="critical">
+            <td class="time">00:00</td>
+            <td>開幕<span class="srcs"><a class="src-t" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=237s" target="_blank" rel="noreferrer" title="タバスコ: P2開幕">T</a></span></td>
+            <td>ST無敵クアドラならスタンスを切る。MT受け方針ならヘイト維持</td>
+            <td><span class="badge b-purple">確認</span></td>
+            <td class="note">P1終わりからのヘイト状態に注意。クアドラ担当を固定内で合わせる。</td>
+          </tr>
+          <tr class="critical">
+            <td class="time">00:17</td>
+            <td>クアドラスラップ 1-2発目<span class="srcs"><a class="src-s" href="https://www.youtube.com/watch?v=u7yy2BMyaIU&t=7s" target="_blank" rel="noreferrer" title="しのしょー: クアドラスラップ">S</a><a class="src-t" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=245s" target="_blank" rel="noreferrer" title="タバスコ: クアドラスラップ">T</a></span></td>
+            <td>ST無敵なら巻き込まない。バフ受けならリプ/単バフを合わせる</td>
+            <td><span class="badge b-red">強攻撃</span></td>
+            <td class="note">終了後もAAが飛ぶので、ヘイト1位はタンバフでケア。</td>
+          </tr>
+          <tr class="party">
+            <td class="time">00:30</td>
+            <td>鏡写し<span class="srcs"><a class="src-s" href="https://www.youtube.com/watch?v=u7yy2BMyaIU&t=25s" target="_blank" rel="noreferrer" title="しのしょー: 鏡写し">S</a></span></td>
+            <td>DD後に出る分身位置を覚える。頭割り後の回り方向に関係</td>
+            <td><span class="badge b-yellow">確認</span></td>
+            <td class="note">DD中は「時計回りの隣に分身がいたら反時計」を固定ルールにする。</td>
+          </tr>
+          <tr class="party clickable-row" data-toggle="p2-dd-detail" tabindex="0" aria-expanded="false">
+            <td class="time">00:37</td>
+            <td>ダイアモンドダスト<span class="toggle-hint">散開</span><span class="srcs"><a class="src-s" href="https://www.youtube.com/watch?v=u7yy2BMyaIU&t=32s" target="_blank" rel="noreferrer" title="しのしょー: ダイアモンドダスト概要">S</a><a class="src-t" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=271s" target="_blank" rel="noreferrer" title="タバスコ: ダイアモンドダスト">T</a></span></td>
+            <td>共通処理。リプ担当なら着弾へ合わせ、MT組はD-1へノックバック</td>
+            <td><span class="badge b-cyan">リプ候補</span><span class="badge b-yellow">散開</span></td>
+            <td class="note">扇誘導は1,3枚目が担当。アクス/サイスで立ち位置とAoE捨て位置だけ変える。</td>
+          </tr>
+          <tr id="p2-dd-detail" class="detail-row">
+            <td colspan="5">
+              <div class="detail-panel">
+                <div class="figure">
+                  <p class="figure-title">DD 基本散開 / 調整</p>
+                  <pre class="figure-note">D3  MT  D4
+H1  ☆   H2
+D1  ST  D2</pre>
+                  <p class="figure-note">基本散開から、AoE外周側に1個目アイシクルがある時は全員時計回りに1つ調整。</p>
+                  <p class="figure-note">扇誘導は1,3枚目がスプリント。AoEは2枚目、アクス時は外周端、サイス時は内側円の線上へ置く。</p>
+                </div>
+                <div class="figure">
+                  <p class="figure-title">DD ノックバック後</p>
+                  <pre class="figure-note">MT組: D-1 / 青・紫マーカー
+ST組: B-3 / 赤・黄マーカー</pre>
+                  <p class="figure-note">頭割り床を3,4回目で分身背面へ置くと詰む。時計回りの隣マーカーに分身がいたら反時計回りで処理。</p>
+                  <p class="figure-note">しのしょー: アクスは <a href="https://www.youtube.com/watch?v=u7yy2BMyaIU&t=41s" target="_blank" rel="noreferrer">0:41</a>、サイスは <a href="https://www.youtube.com/watch?v=u7yy2BMyaIU&t=229s" target="_blank" rel="noreferrer">3:49</a> から確認。</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr class="move clickable-row" data-toggle="p2-mirror-detail" tabindex="0" aria-expanded="false">
+            <td class="time">01:35</td>
+            <td>鏡の国<span class="toggle-hint">散開</span><span class="srcs"><a class="src-s" href="https://www.youtube.com/watch?v=u7yy2BMyaIU&t=319s" target="_blank" rel="noreferrer" title="しのしょー: 鏡の国">S</a><a class="src-t" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=315s" target="_blank" rel="noreferrer" title="タバスコ: 鏡の国誘導">T</a></span></td>
+            <td>白鏡を見て対角へボス誘導。2回目赤鏡が遠い時は引き量を調整</td>
+            <td><span class="badge b-yellow">誘導</span></td>
+            <td class="note">短すぎると遠隔側へサイスキックが当たる。ST側に少し寄せるとSTが殴りやすい。</td>
+          </tr>
+          <tr id="p2-mirror-detail" class="detail-row">
+            <td colspan="5">
+              <div class="detail-panel">
+                <div class="figure">
+                  <p class="figure-title">鏡の国 1回目</p>
+                  <pre class="figure-note">D1  D2
+MT  ●   ST
+D3  D4
+H1  青  H2</pre>
+                  <p class="figure-note">白鏡から先に発動。ボスを白鏡の反対側へ誘導し、近接組はボス側、遠隔組は白鏡側で扇を外へ向ける。</p>
+                </div>
+                <div class="figure">
+                  <p class="figure-title">赤鏡 2回目</p>
+                  <pre class="figure-note">近い赤鏡 / 時計回り優先に近接組
+MT 赤 ST      MT 赤 ST
+H1 D1 D2      D1 D2 H2
+赤 D3         D4 赤
+H2 D4         D3 H1</pre>
+                  <p class="figure-note">赤鏡の距離が同じなら時計回り優先。端担当のタンク/ヒラは扇を外周へ向け、反対側の赤鏡組を巻き込まない。</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr class="party">
+            <td class="time">02:05</td>
+            <td>バニシュガ<span class="srcs"><a class="src-s" href="https://www.youtube.com/watch?v=u7yy2BMyaIU&t=385s" target="_blank" rel="noreferrer" title="しのしょー: バニシュガ">S</a><a class="src-t" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=348s" target="_blank" rel="noreferrer" title="タバスコ: バニシュガ後半リプ">T</a></span></td>
+            <td>リプ担当なら詠唱後半。頭上4玉なら散開、1玉ならペア頭割り</td>
+            <td><span class="badge b-cyan">リプ</span></td>
+            <td class="note">ペアは近接 MT/D1・ST/D2、遠隔 H1/D3・H2/D4。次の光の暴走までリプを乗せる。</td>
+          </tr>
+          <tr class="move clickable-row" data-toggle="p2-light-rampant-detail" tabindex="0" aria-expanded="false">
+            <td class="time">02:14</td>
+            <td>光の暴走<span class="toggle-hint">散開</span><span class="srcs"><a class="src-s" href="https://www.youtube.com/watch?v=u7yy2BMyaIU&t=392s" target="_blank" rel="noreferrer" title="しのしょー: 光の暴走">S</a><a class="src-t" href="https://www.youtube.com/watch?v=iPbWtNaFu2U&t=373s" target="_blank" rel="noreferrer" title="タバスコ: 光の暴走ケア">T</a></span></td>
+            <td>AoE対象者へインタベ/単バフを投げてケア。MTは線付きなら左上塔固定</td>
+            <td><span class="badge b-purple">投げ</span><span class="badge b-yellow">塔</span></td>
+            <td class="note">通常: H1H2MTSTが4-1、DPSが2-3。調整はST/D4、2・5と4・6を入れ替え。</td>
+          </tr>
+          <tr id="p2-light-rampant-detail" class="detail-row">
+            <td colspan="5">
+              <div class="detail-panel">
+                <div class="figure">
+                  <p class="figure-title">光の暴走 初期位置 / 塔</p>
+                  <pre class="figure-note">H1 H2 MT ST   1-2-3
+●  → │ ● │
+D1 D2 D3 D4   6-5-4
+
+線付きMT: 左上塔
+線付きST: 南 or 左上塔</pre>
+                  <p class="figure-note">線の右/左/真ん中で塔判断。THは真ん中以外そのまま、DPSはクロスの意識。自分の候補塔を先に覚える。</p>
+                </div>
+                <div class="figure">
+                  <p class="figure-title">固定向け調整メモ</p>
+                  <p class="figure-note">同ロールにAoE2枚なら調整。TH2枚はD4がTH右線へ、DPS2枚はH2がDPS右線へ入る。</p>
+                  <p class="figure-note">AoEは1,3内側から時計回り。北塔組はA、南塔組はCへ集まり、1個目AoEが消えてから移動。</p>
+                  <p class="figure-note">黄色デバフ2の4人が中央塔。最後は頭上4玉なら8方向散開、1玉ならペア頭割り。</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr class="party">
+            <td class="time">03:12</td>
+            <td>絶対零度<span class="srcs"><a class="src-s" href="https://www.youtube.com/watch?v=u7yy2BMyaIU&t=687s" target="_blank" rel="noreferrer" title="しのしょー: 時間切れ/光の氾濫前">S</a></span></td>
+            <td>全体軽減確認。以降は結晶フェーズへ</td>
+            <td><span class="badge b-blue">全体</span></td>
+            <td class="note">P2終盤。凍結DoT中のHPを見て投げ軽減を温存しすぎない。</td>
+          </tr>
+          <tr class="party">
+            <td class="time">04:29</td>
+            <td>ジャンクション</td>
+            <td>P3へ移行。次のヘル・ジャッジメントに備える</td>
+            <td><span class="badge b-green">移行</span></td>
+            <td class="note">合算07:04。P3開幕でHPが1になる。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <div id="ytdock" class="ytdock" hidden>
+    <div class="ytdock-bar">
+      <span id="ytdock-label">参考動画</span>
+      <span class="ytdock-btns">
+        <button id="ytdock-min" type="button" aria-label="最小化" title="最小化">_</button>
+        <button id="ytdock-close" type="button" aria-label="閉じる" title="閉じる">×</button>
+      </span>
+    </div>
+    <div id="ytplayer"></div>
+  </div>
+
+  <script src="../assets/js/player.js"></script>
+</body>
+</html>
