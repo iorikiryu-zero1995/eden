@@ -20,7 +20,7 @@ document.querySelectorAll("[data-toggle]").forEach((row) => {
   });
 });
 
-// YouTube 参考リンクの挙動: スマホ=埋め込みちびプレーヤー / PC=新タブ
+// YouTube 参考リンクの挙動: iOS/iPadOS・狭幅=埋め込みプレーヤー / PC=新タブ
 (function () {
   var dock = document.getElementById("ytdock");
   var label = document.getElementById("ytdock-label");
@@ -84,9 +84,17 @@ document.querySelectorAll("[data-toggle]").forEach((row) => {
     }
   }
 
-  function isMobile() {
+  function isAppleTouchDevice() {
+    var ua = navigator.userAgent || "";
+    var platform = navigator.platform || "";
+    return /iPad|iPhone|iPod/.test(ua) ||
+           (platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  }
+
+  function shouldUseInlinePlayer() {
     var mobilePlayerMaxWidth = 820;
-    return window.matchMedia("(max-width: " + mobilePlayerMaxWidth + "px)").matches;
+    return isAppleTouchDevice() ||
+           window.matchMedia("(max-width: " + mobilePlayerMaxWidth + "px)").matches;
   }
 
   document.addEventListener("click", function (e) {
@@ -95,14 +103,14 @@ document.querySelectorAll("[data-toggle]").forEach((row) => {
     var info = parseYouTube(a.getAttribute("href"));
     if (!info) return;
 
-    // PC: 埋め込みは使わず、新しいタブで開く（毎回フレッシュ読み込みで t= が効く）
-    if (!isMobile()) {
+    // PC: 埋め込みは使わず、新しいタブで開く
+    if (!shouldUseInlinePlayer()) {
       a.target = "_blank";
       a.rel = "noreferrer";
       return; // preventDefault しない＝ブラウザ既定の新タブ動作に任せる
     }
 
-    // スマホ: 右下のちびプレーヤーで該当時間にジャンプ
+    // iOS/iPadOS・狭幅: YouTubeアプリへ飛ばさず、サイト内プレーヤーで該当時間にジャンプ
     e.preventDefault();
     e.stopPropagation();
     dock.hidden = false;
