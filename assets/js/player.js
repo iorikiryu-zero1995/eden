@@ -85,8 +85,8 @@ document.querySelectorAll("[data-toggle]").forEach((row) => {
   }
 
   function isMobile() {
-    return window.matchMedia("(pointer: coarse)").matches ||
-           window.matchMedia("(max-width: 820px)").matches;
+    var mobilePlayerMaxWidth = 820;
+    return window.matchMedia("(max-width: " + mobilePlayerMaxWidth + "px)").matches;
   }
 
   document.addEventListener("click", function (e) {
