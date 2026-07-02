@@ -339,6 +339,76 @@ ul {
 .hub-card.todo { opacity: 0.55; }
 .hub-card.todo:hover { border-color: var(--line); }
 
+.practice-main {
+  display: block;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 12px;
+}
+
+.practice-card {
+  border: 1px solid #303847;
+  background: #151922;
+  padding: 12px;
+}
+
+.practice-card-wide {
+  margin: 12px;
+}
+
+.practice-card h2 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.practice-card p {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.practice-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(82px, 1fr));
+  gap: 8px;
+}
+
+.practice-links.dense {
+  grid-template-columns: repeat(auto-fit, minmax(76px, 1fr));
+}
+
+.practice-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 6px 8px;
+  border: 1px solid #3d4656;
+  border-radius: 4px;
+  background: rgba(93, 168, 255, 0.14);
+  color: #d9ecff;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.practice-link:hover {
+  border-color: var(--yellow);
+  background: rgba(255, 209, 102, 0.14);
+  color: #fff4cf;
+}
+
+.practice-link.featured {
+  min-height: 46px;
+  background: rgba(123, 216, 143, 0.14);
+  color: #e4ffe9;
+}
+
 @media (max-width: 1120px) {
   main { grid-template-columns: 1fr; }
   th { top: 76px; }
@@ -375,6 +445,26 @@ ul {
   main {
     display: block;
     padding: 8px;
+  }
+
+  .practice-grid {
+    grid-template-columns: 1fr;
+    padding: 8px;
+  }
+
+  .practice-card-wide {
+    margin: 8px;
+  }
+
+  .practice-links,
+  .practice-links.dense {
+    grid-template-columns: repeat(auto-fit, minmax(68px, 1fr));
+    gap: 6px;
+  }
+
+  .practice-link {
+    min-height: 38px;
+    font-size: 14px;
   }
 
   section {
