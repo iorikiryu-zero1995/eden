@@ -249,6 +249,36 @@ th {
   border: 1px solid #2a313d;
   background: #0c0f14;
 }
+.sequence-block {
+  grid-column: 1 / -1;
+}
+.mechanic-sequence {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px;
+}
+.sequence-step {
+  min-width: 0;
+  border: 1px solid #2a313d;
+  background: #10141c;
+}
+.sequence-step img {
+  border: 0;
+  border-bottom: 1px solid #2a313d;
+}
+.sequence-step p {
+  margin: 0;
+  padding: 7px 8px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+.sequence-step strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--text);
+  font-size: 13px;
+}
 
 .badge {
   display: inline-block;
